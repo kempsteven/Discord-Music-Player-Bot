@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-app.use('/user', (req, res, next) => {
+app.use('/', (req, res, next) => {
 	return res.status(200).json('ukinam')
 })
 
