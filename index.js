@@ -130,3 +130,6 @@ client.on('messageCreate', async message => {
 })
 
 client.login(process.env.DISCORD_TOKEN)
+
+const port = process.env.PORT || 3000
+app.listen(port, () => console.log(`App listening on port ${port}!`))
