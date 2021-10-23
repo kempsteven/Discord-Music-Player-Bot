@@ -8,6 +8,7 @@ app.use('/', (req, res, next) => {
 const prefix = process.env.PREFIX
 const { Client } = require('discord.js')
 const { Player } = require('discord-player')
+const downloader = require("@discord-player/downloader").Downloader
 
 const client = new Client({
   restTimeOffset: 0,
@@ -24,6 +25,7 @@ const player = new Player(client, {
 	initialVolume: 50,
 	bufferingTimeout: 3000,
 })
+player.use("YOUTUBE_DL", downloader)
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
