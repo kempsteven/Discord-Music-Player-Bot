@@ -1,6 +1,11 @@
 require('dotenv').config()
-const prefix = process.env.PREFIX
+const express = require('express')
+const app = express()
+app.use('/user', (req, res, next) => {
+	return res.status(200).json('ukinam')
+})
 
+const prefix = process.env.PREFIX
 const { Client } = require('discord.js')
 const { Player } = require('discord-player')
 
